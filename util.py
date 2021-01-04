@@ -17,6 +17,6 @@ def show_2_images_with_matplot(image1, image2, title1, title2):
     plt.show()
 
 
-def show_image_with_matplot(image1, title1):
-    plt.plot(121), plt.imshow(image1, cmap='gray'), plt.title(title1)
+def show_image_with_matplot(image1):
+    plt.imshow(image1, cmap='gray'), plt.title("Given Image")
     plt.show()
