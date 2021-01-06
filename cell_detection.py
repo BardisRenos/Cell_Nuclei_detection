@@ -24,6 +24,8 @@ def image_preprocessing(given_image):
     image_gray_scale = convert_to_gray_scale(given_image)
     _, image_threshold_bw = cv2.threshold(image_gray_scale, 100, 255, cv2.THRESH_OTSU)
 
+    show_2_images_with_matplot(given_image, image_threshold_bw, "Given Image", "Threshold Image")
+
     kernel = np.ones((3, 3), np.uint8)
     image_morph = cv2.morphologyEx(image_threshold_bw, cv2.MORPH_CLOSE, kernel, iterations=3)
     image_mask = 255 - image_morph
@@ -49,9 +51,9 @@ def image_preprocessing(given_image):
         given_image[image_markers == -1] = [0, 255, 0]
         image_label2rgb = color.label2rgb(image_markers, bg_label=0)
 
-        plot_an_image(image_label2rgb)
+        plot_an_image(given_image)
 
-    watershed()
+    # watershed()
 
 
 if __name__ == '__main__':
