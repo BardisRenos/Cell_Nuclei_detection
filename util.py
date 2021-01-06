@@ -11,7 +11,7 @@ def read_image(path):
     return cv2.imread(path)
 
 
-# Remove cells that are touching the edge of the image
+# Remove cells that are touching the edge of the image (if is needed)
 def clear_borders(image):
     return clear_border(image)
 
