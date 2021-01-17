@@ -48,6 +48,8 @@ def markers_creation(foreground, the_unknown_image):
 
 ### Image watershed
 
+In the study of image processing, a watershed is a transformation defined on a grayscale image. The name refers metaphorically to a geological watershed, or drainage divide, which separates adjacent drainage basins. The watershed transformation treats the image it operates upon like a topographic map, with the brightness of each point representing its height, and finds the lines that run along the tops of ridges. [link](https://en.wikipedia.org/wiki/Watershed_(image_processing))
+
 ```python 
 def watershed(pure_image, image_markers):
     image_markers = cv2.watershed(pure_image, image_markers)
