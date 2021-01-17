@@ -67,7 +67,7 @@ def watershed(pure_image, image_markers):
 </p>
 
 <p align="center"> 
-<img src="https://en.wikipedia.org/wiki/Watershed_(image_processing)" width="400" height="450" style=centerme>
+<img src="https://github.com/BardisRenos/Cell_Nuclei_detection/blob/main/Screenshot%20from%202021-01-17%2020-36-39.png" width="400" height="450" style=centerme>
 </p>
 
 
