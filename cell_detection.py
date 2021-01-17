@@ -1,14 +1,15 @@
 #! /usr/bin python3
 # -*- coding: utf-8 -*-
 
-import cv2
 import numpy as np
 from skimage import color
 from util import *
 
 
-def convert_to_gray_scale(image):
-    image_to_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+# class ImagesCategory
+
+def convert_to_gray_scale(given_image):
+    image_to_gray = cv2.cvtColor(given_image, cv2.COLOR_BGR2GRAY)
     return image_to_gray
 
 
@@ -20,11 +21,13 @@ def plot_2_images(image1, image2, title1, title2):
     show_2_images_with_matplot(image1, image2, title1, title2)
 
 
+def plot_4_images(image1, image2, image3, image4, title1, title2, title3, title4):
+    show_4_images_with_matplot(image1, image2, image3, image4, title1, title2, title3, title4)
+
+
 def image_preprocessing(given_image):
     image_gray_scale = convert_to_gray_scale(given_image)
     _, image_threshold_bw = cv2.threshold(image_gray_scale, 100, 255, cv2.THRESH_OTSU)
-
-    show_2_images_with_matplot(given_image, image_threshold_bw, "Given Image", "Threshold Image")
 
     kernel = np.ones((3, 3), np.uint8)
     image_morph = cv2.morphologyEx(image_threshold_bw, cv2.MORPH_CLOSE, kernel, iterations=3)
@@ -37,28 +40,34 @@ def image_preprocessing(given_image):
     the_unknown_image = background - foreground
     foreground = np.uint8(foreground)
 
-    def markers_creation():
-        _, image_markers = cv2.connectedComponents(foreground, connectivity=8)
-        image_markers = image_markers + 10
-        image_markers[the_unknown_image == 255] = 0
+    # show_image_with_matplot(foreground)
+    # plot_4_images(given_image, image_gray_scale, image_morph, image_mask, "Pure Image", "Gray Scale", "Morph Image", "Image Mask")
 
-        return image_markers
+    return foreground, the_unknown_image
 
-    def watershed():
-        image_markers = markers_creation()
 
-        image_markers = cv2.watershed(given_image, image_markers)
-        given_image[image_markers == -1] = [0, 255, 0]
-        image_label2rgb = color.label2rgb(image_markers, bg_label=0)
+def markers_creation(foreground, the_unknown_image):
+    _, image_markers = cv2.connectedComponents(foreground, connectivity=8)
+    image_markers = image_markers + 10
+    image_markers[the_unknown_image == 255] = 0
 
-        plot_an_image(given_image)
+    # show_image_with_matplot(image_markers)
+    return image_markers
 
-    # watershed()
+
+def watershed(pure_image, image_markers):
+    image_markers = cv2.watershed(pure_image, image_markers)
+    pure_image[image_markers == -1] = [0, 255, 0]
+    image_label2rgb = color.label2rgb(image_markers, bg_label=0)
+
+    plot_an_image(pure_image)
 
 
 if __name__ == '__main__':
-    image_path = '/home/renos/Pictures/sample_3.png'
+    # image_path = '/home/renos/Pictures/sample_3.png'
+    image_path = '/home/renos/Pictures/sample_2.png'
     image = read_image(image_path)
 
-    # show_image_with_matplot(image[:, :, 0])
-    image_preprocessing(image)
+    foreground, the_unknown_image = image_preprocessing(image)
+    image_markers = markers_creation(foreground, the_unknown_image)
+    watershed(image, image_markers)
