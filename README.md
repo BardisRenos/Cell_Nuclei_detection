@@ -35,6 +35,17 @@ The two below images are an example of image tissue and with which will work wit
 ### Image markers
 
 
+```python
+def markers_creation(foreground, the_unknown_image):
+    _, image_markers = cv2.connectedComponents(foreground, connectivity=8)
+    image_markers = image_markers + 10
+    image_markers[the_unknown_image == 255] = 0
+
+    show_image_with_matplot(image_markers)
+    return image_markers
+
+```
+
 ### Image watershed
 
 
