@@ -12,6 +12,25 @@ The two below images are an example of image tissue and with which will work wit
 ## Image steps to Preprocess 
 
 
+```python
+
+  def image_preprocessing(given_image):
+    image_gray_scale = convert_to_gray_scale(given_image)
+    _, image_threshold_bw = cv2.threshold(image_gray_scale, 100, 255, cv2.THRESH_OTSU)
+
+    kernel = np.ones((3, 3), np.uint8)
+    image_morph = cv2.morphologyEx(image_threshold_bw, cv2.MORPH_CLOSE, kernel, iterations=3)
+    image_mask = 255 - image_morph
+
+    background = cv2.dilate(image_mask, kernel, iterations=2)
+
+    dist_transform = cv2.distanceTransform(image_mask, cv2.DIST_L2, 3)
+    _, foreground = cv2.threshold(dist_transform, 0.285 * dist_transform.max(), 255, 0)
+    the_unknown_image = background - foreground
+    foreground = np.uint8(foreground)
+
+```
+
 
 
 ## Plotting the image stages 
