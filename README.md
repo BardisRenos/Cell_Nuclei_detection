@@ -48,7 +48,14 @@ def markers_creation(foreground, the_unknown_image):
 
 ### Image watershed
 
+```python 
+def watershed(pure_image, image_markers):
+    image_markers = cv2.watershed(pure_image, image_markers)
+    pure_image[image_markers == -1] = [0, 255, 0]
+    image_label2rgb = color.label2rgb(image_markers, bg_label=0)
 
+    plot_an_image(pure_image)
+```
 
 
 ## Plotting the image stages 
