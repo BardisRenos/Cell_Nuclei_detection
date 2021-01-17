@@ -33,6 +33,7 @@ def show_4_images_with_matplot(image1, image2, image3, image4, title1, title2, t
     plt.subplot(224), plt.imshow(image4, cmap='gray'), plt.title(title4)
     plt.show()
 
+
 def show_6_images_with_matplot(image1, image2, image3, image4, image5, image6,
                                title1, title2, title3, title4, title5, title6):
     plt.figure(figsize=(20, 12))
@@ -43,6 +44,7 @@ def show_6_images_with_matplot(image1, image2, image3, image4, image5, image6,
     plt.subplot(225), plt.imshow(image5, cmap='gray'), plt.title(title5)
     plt.subplot(226), plt.imshow(image6, cmap='gray'), plt.title(title6)
     plt.show()
+
 
 # Showing the image by using OpenCV
 def show_image_with_matplot(image1):
