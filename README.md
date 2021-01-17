@@ -88,6 +88,10 @@ def watershed(pure_image, image_markers):
 
 ### Image 2
 
+Using the second image to apply the same parameters and filters to observ the results.
+
+#### Plotting the images
+
 <p align="center"> 
 <img src="https://github.com/BardisRenos/Cell_Nuclei_detection/blob/main/Screenshot%20from%202021-01-17%2021-03-59.png" width="400" height="450" style=centerme>
 </p>
@@ -99,3 +103,7 @@ def watershed(pure_image, image_markers):
 <p align="center"> 
 <img src="https://github.com/BardisRenos/Cell_Nuclei_detection/blob/main/Screenshot%20from%202021-01-17%2021-06-32.png" width="400" height="450" style=centerme>
 </p>
+
+## Improvings
+
+In order to improve the accuracy detection better into the cells. It will be prouden to tunne the filters and thresholding and reach a better result.
