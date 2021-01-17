@@ -40,9 +40,7 @@ def image_preprocessing(given_image):
     the_unknown_image = background - foreground
     foreground = np.uint8(foreground)
 
-    # show_image_with_matplot(foreground)
-    # plot_4_images(given_image, image_gray_scale, image_morph, image_mask, "Pure Image", "Gray Scale", "Morph Image", "Image Mask")
-
+    plot_4_images(given_image, image_gray_scale, image_morph, image_mask, "Pure Image", "Gray Scale", "Morph Image", "Image Mask")
     return foreground, the_unknown_image
 
 
