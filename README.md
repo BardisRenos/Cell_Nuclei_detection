@@ -42,6 +42,9 @@ The two below images are an example of image tissue and with which will work wit
 
 ## Plotting the image stages 
 
+<img src="https://github.com/BardisRenos/Cell_Nuclei_detection/blob/main/Screenshot%20from%202021-01-17%2020-07-51.png" width="300"/> <img src="https://github.com/BardisRenos/Cell_Nuclei_detection/blob/main/sample_3.png" width="300"/>
+
+
 
 
 ## Ploting the final detection picture
