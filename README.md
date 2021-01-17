@@ -86,8 +86,16 @@ def watershed(pure_image, image_markers):
 <img src="https://github.com/BardisRenos/Cell_Nuclei_detection/blob/main/Screenshot%20from%202021-01-17%2020-44-30.png" width="400" height="450" style=centerme>
 </p>
 
-### image 2
+### Image 2
 
+<p align="center"> 
+<img src="https://github.com/BardisRenos/Cell_Nuclei_detection/blob/main/Screenshot%20from%202021-01-17%2021-03-59.png" width="400" height="450" style=centerme>
+</p>
 
+<p align="center"> 
+<img src="https://github.com/BardisRenos/Cell_Nuclei_detection/blob/main/Screenshot%20from%202021-01-17%2021-05-46.png" width="400" height="450" style=centerme>
+</p>
 
-
+<p align="center"> 
+<img src="https://github.com/BardisRenos/Cell_Nuclei_detection/blob/main/Screenshot%20from%202021-01-17%2021-06-32.png" width="400" height="450" style=centerme>
+</p>
