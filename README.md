@@ -11,6 +11,7 @@ The two below images are an example of image tissue and with which will work wit
 
 ## Image steps to Preprocess 
 
+### Image manipulation
 
 ```python
 
@@ -30,6 +31,12 @@ The two below images are an example of image tissue and with which will work wit
     foreground = np.uint8(foreground)
 
 ```
+
+### Image markers
+
+
+### Image watershed
+
 
 
 
