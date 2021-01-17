@@ -11,3 +11,11 @@ The two below images are an example of image tissue and with which will work wit
 
 ## Image steps to Preprocess 
 
+
+
+
+## Plotting the image stages 
+
+
+
+## Ploting the final detection picture
