@@ -106,4 +106,4 @@ Using the second image to apply the same parameters and filters to observ the re
 
 ## Improvings
 
-In order to improve the accuracy detection better into the cells. It will be prouden to tunne the filters and thresholding and reach a better result.
+In order to improve the accuracy detection better into the cells. It will be wise to tunne the filters and thresholding parameters and reach a better result.
