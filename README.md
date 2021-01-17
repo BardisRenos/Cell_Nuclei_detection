@@ -11,6 +11,9 @@ The two below images are an example of image tissue and with which will work wit
 
 ## Image steps to Preprocess 
 
+
+### Image 1
+
 ### Image manipulation
 
 ```python
@@ -82,6 +85,9 @@ def watershed(pure_image, image_markers):
 <p align="center"> 
 <img src="https://github.com/BardisRenos/Cell_Nuclei_detection/blob/main/Screenshot%20from%202021-01-17%2020-44-30.png" width="400" height="450" style=centerme>
 </p>
+
+### image 2
+
 
 
 
